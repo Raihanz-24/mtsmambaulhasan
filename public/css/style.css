@@ -1,0 +1,77 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tombol scroll ke atas */
+#scrollToTopBtn {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#scrollToTopBtn.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollToTopBtn:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* untuk section galery */
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+/* section galery end */
+
+/* untuk section q and a */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+    max-height: 500px; /* Adjust as needed */
+}
+/* section q and a end */
